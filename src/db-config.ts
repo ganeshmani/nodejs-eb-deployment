@@ -15,6 +15,8 @@ let dbDatabase = process.env.DB_DATABASE;
 const { DB_HOST, DB_PORT, DB_USERNAME, DB_PASSWORD, DB_DATABASE, NODE_ENV } =
   process.env;
 
+console.log('NODE_ENV', NODE_ENV);
+
 if (NODE_ENV !== 'dev') {
   dbHost = process.env.RDS_HOSTNAME;
   dbPort = parseInt(process.env.RDS_PORT || '5432');
