@@ -25,11 +25,11 @@ if (NODE_ENV !== 'dev') {
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
-  host: dbHost,
-  port: dbPort,
-  username: dbUsername,
-  password: dbPassword,
-  database: dbDatabase,
+  host: process.env.RDS_HOSTNAME,
+  port: parseInt(process.env.RDS_PORT || '5432'),
+  username: process.env.RDS_USERNAME,
+  password: process.env.RDS_PASSWORD,
+  database: process.env.RDS_DB_NAME,
   synchronize: NODE_ENV === 'dev' ? false : true,
   //logging logs sql command on the treminal
   logging: NODE_ENV === 'dev' ? false : false,
