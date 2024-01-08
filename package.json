@@ -2,7 +2,6 @@
   "name": "nodejs-ebs-deployment",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "build": "tsc",
     "start": "node index.js",
