@@ -14,7 +14,7 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Welcome to the server!');
 });
 
-app.use('/api', movieRouter);
+// app.use('/api', movieRouter);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   return res.status(500).json({
@@ -22,12 +22,14 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   });
 });
 
-AppDataSource.initialize()
-  .then(async () => {
-    app.listen(port, () => {
-      console.log(`[server]: Server is running at http://localhost:${port}`);
-    });
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+app.listen(port, () => {
+  console.log(`[server]: Server is running at http://localhost:${port}`);
+});
+
+// AppDataSource.initialize()
+//   .then(async () => {
+
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
