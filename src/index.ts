@@ -22,13 +22,13 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   });
 });
 
-AppDataSource.initialize()
-  .then(async () => {
-    console.log('[server]: Connected to the database');
-    app.listen(port, () => {
-      console.log(`[server]: Server is running at http://localhost:${port}`);
-    });
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// AppDataSource.initialize()
+//   .then(async () => {
+console.log('[server]: Connected to the database');
+app.listen(port, () => {
+  console.log(`[server]: Server is running at http://localhost:${port}`);
+});
+// })
+// .catch((err) => {
+//   console.log(err);
+// });
