@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req: Request, res: Response) => {
-  res.send(`Welcome to the server! ${process.env}`);
+  res.send(`Welcome to the server! ${JSON.stringify(process.env)}`);
 });
 
 // app.use('/api', movieRouter);
