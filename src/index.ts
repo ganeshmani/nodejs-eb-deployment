@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Welcome to the server!');
+  res.send(`Welcome to the server! ${process.env}`);
 });
 
 // app.use('/api', movieRouter);
@@ -22,13 +22,13 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   });
 });
 
-AppDataSource.initialize()
-  .then(async () => {
-    console.log('[server]: Connected to the database');
-    app.listen(port, () => {
-      console.log(`[server]: Server is running at http://localhost:${port}`);
-    });
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// AppDataSource.initialize()
+//   .then(async () => {
+console.log('[server]: Connected to the database');
+app.listen(port, () => {
+  console.log(`[server]: Server is running at http://localhost:${port}`);
+});
+// })
+// .catch((err) => {
+//   console.log(err);
+// });
