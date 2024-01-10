@@ -11,10 +11,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req: Request, res: Response) => {
-  res.send(`Welcome to the server! ${JSON.stringify(process.env)}`);
+  res.send(`Welcome to the server!`);
 });
 
-// app.use('/api', movieRouter);
+app.use('/api', movieRouter);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   return res.status(500).json({
