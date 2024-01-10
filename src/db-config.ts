@@ -39,4 +39,5 @@ export const AppDataSource = new DataSource({
   migrations:
     NODE_ENV === 'dev' ? ['src/migration/**/*.ts'] : ['dist/migration/**/*.js'],
   subscribers: [],
+  ssl: NODE_ENV === 'dev' ? false : true,
 });
